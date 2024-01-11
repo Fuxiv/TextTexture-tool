@@ -6,18 +6,18 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        File fileTT = new File("ultimatetest.cfg");
-        File fileUT = new File("ultimatetest.cfg");
-        List<Integer> list = new ArrayList<>();
+        File file = new File("ultimatetest.cfg");
         try {
-            Texttexture texttexture = new Texttexture(fileTT, fileUT);
+            Texttexture texttexture = new Texttexture(file);
             System.out.println(texttexture.getTexttextureIndexesList());
-            list = texttexture.getUsetexttextureIndexes();
-//            Collections.sort(list);
-            System.out.println(list);
+            System.out.println(texttexture.getUsetexttextureIndexes());
+            System.out.println(texttexture.replaceTexttexture());
+            System.out.println(texttexture.replaceUsetexttexture());
+            texttexture.makeCfg();
 
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
     }
 }
